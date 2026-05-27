@@ -17,23 +17,26 @@ BOT_TOKEN = "8931408596:AAHpQAeA0iLWLQjrltfJ1RZYfrh5HNrSbGQ" # Apna Bot Token da
 OWNER_ID = 8722144519 # Apna Telegram ID daalein
 BOT_USERNAME = "@ll_SUPRRME_XD_ll_BOT" # Apna bot username daalein
 
-#=============== DUMMY SERVER FOR RENDER ================
+# =============== DUMMY SERVER FOR RENDER ================
+
 class Handler(BaseHTTPRequestHandler):
-def do_GET(self):
-self.send_response(200)
-self.end_headers()
-self.wfile.write(b"Bot is running!")
-def log_message(self, format, *args):
-pass
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot is running!")
+
+    def log_message(self, format, *args):
+        pass
+
 
 def run_server():
-port = int(os.environ.get("PORT", 10000))
-server = HTTPServer(('0.0.0.0', port), Handler)
-server.serve_forever()
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(("0.0.0.0", port), Handler)
+    server.serve_forever()
 
-Start server thread for Render
+
+# Start server thread for Render
 threading.Thread(target=run_server, daemon=True).start()
-
 app = Client("fast_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 #Data storage
@@ -606,5 +609,5 @@ print(f"📊 Sudo Users: {len(sudo_users)}")
 
 app.run()
 
-if name == "main":
-main()
+if __name__ == "__main__":
+    main()
