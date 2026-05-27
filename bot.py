@@ -78,20 +78,24 @@ default_shayari = {
 
 #Load saved data
 def load_data():
-global sudo_users, custom_stickers, shayari_data
-try:
-if os.path.exists("sudo_users.json"):
-with open("sudo_users.json", "r") as f:
-sudo_users = set(json.load(f))
-if os.path.exists("custom_stickers.json"):
-with open("custom_stickers.json", "r") as f:
-custom_stickers = json.load(f)
-if os.path.exists("shayari_data.json"):
-with open("shayari_data.json", "r") as f:
-shayari_data = json.load(f)
-except Exception as e:
-print(f"Error loading data: {e}")
+    global sudo_users, custom_stickers, shayari_data
 
+    try:
+        if os.path.exists("sudo_users.json"):
+            with open("sudo_users.json", "r") as f:
+                sudo_users = set(json.load(f))
+
+        if os.path.exists("custom_stickers.json"):
+            with open("custom_stickers.json", "r") as f:
+                custom_stickers = json.load(f)
+
+        if os.path.exists("shayari_data.json"):
+            with open("shayari_data.json", "r") as f:
+                shayari_data = json.load(f)
+
+    except Exception as e:
+        print(f"Error loading data: {e}")
+        
 def save_data():
 with open("sudo_users.json", "w") as f:
 json.dump(list(sudo_users), f)
