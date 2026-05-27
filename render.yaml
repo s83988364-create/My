@@ -1,8 +1,7 @@
 services:
-  - type: worker
-    name: telegram-bot
-    runtime: python
-    repo: https://github.com/s83988364/My       # 🔁 CHANGE THIS!
+  - type: web
+    name: my
+    env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
     envVars:
