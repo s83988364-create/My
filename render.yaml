@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: telegram-bot
+    runtime: python
+    repo: https://github.com/s83988364/My       # 🔁 CHANGE THIS!
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
