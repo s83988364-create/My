@@ -1,4 +1,4 @@
 python-telegram-bot==21.6
 aiohttp
 pydantic==2.7.4
-PYTHON_VERSION = 3.11.0
+
