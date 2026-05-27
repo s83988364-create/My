@@ -56,7 +56,7 @@ shayari_data = {
 "general": []
 }
 
-Default shayari
+#Default shayari
 default_shayari = {
 "love": [
 "❤️ प्यार में यूं मिलते हैं दिल,\nजैसे सागर में मिलती है नदी।\nतुमसे मिलकर लगता है,\nये दुनिया है सबसे हसीन! 💕",
